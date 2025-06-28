@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BlogSanrios</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap" rel="stylesheet">
+
+
+
+	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <link rel="stylesheet" type="text/css" href="stylememoria.css">
+		
+		
+
+</head>
+<body>
+
+
+
+<div class="container">
+	<div class="row my-3">
+		<div class="col-lg-6">
+			<h1 class="logo"><img src="images/melody.png" alt="Logo" class="logo-img">SanriosBlog</h1>
+
+
+
+		</div>
+
+
+		
+		<div class="row">
+			<div class="col-lg-12 my-3" >
+
+
+
+
+
+
+			<nav class="navbar navbar-expand-lg  navbarcss fixed-top">
+		  	<div class="container-fluid">
+
+		    <a class="navbar-brand" href="index.html"><i class="fa-solid fa-house"></i></a>
+		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		      <span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		      <ul class="navbar-nav">
+
+             <li class="nav-item">
+            <a class="nav-link" href="#blog">Blog</a>
+          </li><li class="nav-item">
+
+	        <li class="nav-item">
+	          <a class="nav-link" href="#jogos">Jogos</a>
+	        </li><li class="nav-item">
+
+	          <a class="nav-link" href="#galeria">Galeria</a>
+	        </li><li class="nav-item">
+
+	        	
+	          <a class="nav-link" href="#filmes">Filmes</a>
+	        </li>
+
+	        
+
+	        <li class="nav-item">
+
+	          <a class="nav-link" href="#contato">Contato</a>
+
+	        </li>
+	        
+	        <li class="nav-item dropdown">
+
+	        		
+
+	        <ul class="dropdown-menu">
+
+
+
+
+
+
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+
+        </li>
+      </ul>
+
+      		<div class="col-lg-9 d-flex justify-content-end">
+  					<form class="d-flex" role="search">
+   					 <div class="input-group">
+     				 <input type="text" placeholder="Pesquisa..." class="form-control">
+      			<button class="botao"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </form>
+</div>
+
+
+    </div>
+  </div>
+</nav> 
+
+
+
+
+			 </div>
+	</div>
+
+	<div class="gif-com-texto">
+  <div class="circulo">
+    <img src="images/melo.gif" alt="Gif esquerdo">
+  </div>
+  
+  <p class="texto-ao-lado">
+    Bem-vindo ao BlogSanrios! 🌙
+    Que tal escolher uma música para navegar? &lt;3
+  </p>
+  
+  <div class="circulo">
+    <img src="images/dance.gif" alt="Gif direito">
+  </div>
+</div>
+
+
+
+
+<div class="audio-player-music">
+  <div class="info-music">
+    <strong id="music-title">SugarCrash!</strong><br>
+    <small id="music-artist">ElyOtto</small>
+  </div>
+
+  <input type="range" id="progress-music" value="0" step="1">
+
+  <div class="time-display">
+    <span id="current-time">0:00</span>
+    <span id="total-time">0:00</span>
+  </div>
+
+  <div class="volume-control">
+    <label for="volume-range">🔊</label>
+    <input type="range" id="volume-range" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <div class="controls-music">
+    <button id="shuffle-music">
+      <img src="images/btm.jpeg" alt="Shuffle" class="icon-btn">
+    </button>
+    <button id="back-music">
+      <img src="images/btl.png" alt="Voltar" class="icon-btn">
+    </button>
+    <button id="play-music-btn">
+      <img id="play-icon" src="images/btp.jpeg" alt="Play" class="icon-btn">
+    </button>
+    <button id="forward-music">
+      <img src="images/btr.jpeg" alt="Avançar" class="icon-btn">
+    </button>
+    <button id="repeat-music">
+      <img src="images/btlo.jpeg" alt="Repetir" class="icon-btn">
+    </button>
+  </div>
+
+  <audio id="audio-music" src="song/song1.mp3"></audio>
+</div>
+
+<script>
+  const audioMusic = document.getElementById('audio-music');
+  const playMusicBtn = document.getElementById('play-music-btn');
+  const playIcon = document.getElementById('play-icon');
+  const musicTitle = document.getElementById('music-title');
+  const musicArtist = document.getElementById('music-artist');
+  const progressMusic = document.getElementById('progress-music');
+  const volumeRange = document.getElementById('volume-range');
+  const currentTimeEl = document.getElementById('current-time');
+  const totalTimeEl = document.getElementById('total-time');
+
+  const musicas = [
+    { src: "song/song1.mp3", title: "SugarCrash!", artist: "ElyOtto" },
+    { src: "song/song3.mp3", title: "「恋愛サーキュレーション」歌ってみた【＊なみりん】", artist: "Renai Circulation" },
+    { src: "song/song2.mp3", title: "Cupid", artist: "Fifty Fifty" }
+  ];
+
+  let musicaAtual = 0;
+
+  function trocarMusica(index) {
+    musicaAtual = index;
+    audioMusic.src = musicas[index].src;
+    musicTitle.textContent = musicas[index].title;
+    musicArtist.textContent = musicas[index].artist;
+    audioMusic.play();
+    playIcon.src = "images/btp.jpeg";
+    playIcon.alt = "Pause";
+  }
+
+  playMusicBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (audioMusic.paused) {
+      audioMusic.play();
+      playIcon.src = "images/btp.jpeg";
+      playIcon.alt = "Pause";
+    } else {
+      audioMusic.pause();
+      playIcon.src = "images/btp.jpeg";
+      playIcon.alt = "Play";
+    }
+  });
+
+  document.getElementById('forward-music').addEventListener('click', () => {
+    musicaAtual = (musicaAtual + 1) % musicas.length;
+    trocarMusica(musicaAtual);
+  });
+
+  document.getElementById('back-music').addEventListener('click', () => {
+    musicaAtual = (musicaAtual - 1 + musicas.length) % musicas.length;
+    trocarMusica(musicaAtual);
+  });
+
+  // Controle de volume
+  volumeRange.addEventListener('input', () => {
+    audioMusic.volume = volumeRange.value;
+  });
+
+  // Atualiza a barra de progresso e o tempo atual da música
+  audioMusic.addEventListener('timeupdate', () => {
+    progressMusic.max = audioMusic.duration || 0;
+    progressMusic.value = audioMusic.currentTime;
+    currentTimeEl.textContent = formatTime(audioMusic.currentTime);
+  });
+
+  // Atualiza o tempo total quando os metadados da música carregam
+  audioMusic.addEventListener('loadedmetadata', () => {
+    totalTimeEl.textContent = formatTime(audioMusic.duration);
+    progressMusic.max = audioMusic.duration;
+  });
+
+  // Permite arrastar a barra de progresso
+  progressMusic.addEventListener('input', () => {
+    audioMusic.currentTime = progressMusic.value;
+  });
+
+  function formatTime(seconds) {
+    const min = Math.floor(seconds / 60) || 0;
+    const sec = Math.floor(seconds % 60) || 0;
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+<div class="circulos-personagens">
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg5.jpeg" alt="Personagem 1">
+    </div>
+    <p class="nome-personagem">Hello Kitty</p>
+  </div>
+
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg2.jpeg" alt="Personagem 2">
+    </div>
+    <p class="nome-personagem">Cinnamoroll</p>
+  </div>
+
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg1.jpeg" alt="Personagem 3">
+    </div>
+    <p class="nome-personagem">Kurumi</p>
+  </div>
+
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg4.jpeg" alt="Personagem 4">
+    </div>
+    <p class="nome-personagem">PomPompurin</p>
+  </div>
+
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg3.jpeg" alt="Personagem 5">
+    </div>
+    <p class="nome-personagem">Badtz-Maru</p>
+  </div>
+
+  <div class="personagem">
+    <div class="circulo-personagem">
+      <img src="images/simg6.jpeg" alt="Personagem 6">
+    </div>
+    <p class="nome-personagem">Pochacco</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<section id="blog">
+<h2>Blog</h2>
+<p>
+A Sanrio é uma empresa japonesa que cria personagens super fofos e queridos, como a famosa Hello Kitty. Mas sabia que a Hello Kitty, apesar de parecer um gatinho, na verdade é uma garotinha? Ela nunca fala, porque a ideia é que cada pessoa imagine o que ela está sentindo. Fundada há décadas, a Sanrio conquistou o mundo com seus produtos cheios de charme, que fazem muita gente sorrir e se sentir feliz. É uma marca que espalha amizade, alegria e um toque de magia por onde passa!
+</p>
+</section>
+
+
+ <section id="jogos"><h2> games!</h2></section>
+
+ <p>Descubra uma seleção especial de joguinhos leves,pensados para quem gosta de diversão tranquila e momentos tranquilos.
+Escolha o seu favorito e aproveite com calma e alegria! </p>
+
+	<div class="row my-3">
+			<div class="col-lg-12">
+
+
+
+				<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+
+
+
+
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+    <h3>Snake🌸</h3>
+    <p> </p>
+
+    <div class="game-wrapper">
+      <div class="game-container">
+        <canvas id="game" width="900" height="500"></canvas>
+        <button id="playBtn" class="btn btn-primary play-button">Snake Game :)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Imagens pré-carregadas (invisíveis, apenas para garantir que estão carregadas) -->
+<div style="display: none;">
+  <img src="images/fg1.jpeg" id="img1" />
+  <img src="images/fg2.jpeg" id="img2" />
+  <img src="images/fg3.jpeg" id="img3" />
+  <img src="images/fg4.jpeg" id="img4" />
+  <img src="images/fg5.jpeg" id="img5" />
+  <img src="images/fg1.jpeg" id="img6" />
+  <img src="images/comida.png" id="foodImg" />
+</div>
+
+<script src="script.js"></script>
+
+
+
+<div class="carousel-item">
+
+ <h3>Flip Moon ☁️</h3> 
+<p></p>
+
+<div id="bird-game" style="
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background: url('images/fundo2.jpeg') no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  border: 2px solid pink;
+  margin: 0 auto;
+">
+
+  <img id="bird" src="images/moon.gif" alt="passarinho" style="
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50px;
+    top: 150px;
+  " />
+
+  <div id="pipe-top" style="
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(to bottom, #cceeff, #aaddff);
+    right: -60px;
+    top: 0;
+  "></div>
+
+  <div id="pipe-bottom" style="
+    position: absolute;
+    width: 60px;
+    height: 100px;
+    background: linear-gradient(to top, #cceeff, #aaddff);
+    right: -60px;
+    bottom: 0;
+  "></div>
+
+  <button id="play-button" onclick="startBirdGame()" style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: pink;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb6c1;
+    cursor: pointer;
+  ">Play Flip Bird :p</button>
+</div>
+
+  <script>
+    let birdY = 150;
+    let velocity = 0;
+    const gravity = 0.6;
+    let birdInterval;
+    let pipeInterval;
+    let gameRunning = false;
+
+    function flap() {
+      velocity = -8;
+    }
+
+    function startBirdGame() {
+      if (gameRunning) return;
+      gameRunning = true;
+
+      const bird = document.getElementById("bird");
+      const pipeTop = document.getElementById("pipe-top");
+      const pipeBottom = document.getElementById("pipe-bottom");
+      const playButton = document.getElementById("play-button");
+      playButton.style.display = "none";
+
+      birdY = 150;
+      velocity = 0;
+      bird.style.top = birdY + "px";
+
+      let pipeX = 900;
+      let pipeGap = 150;
+      let pipeHeight = Math.floor(Math.random() * 200) + 50;
+
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "KeyW" || e.code === "Space") {
+          e.preventDefault();
+          flap();
+        }
+      });
+
+      birdInterval = setInterval(() => {
+        velocity += gravity;
+        birdY += velocity;
+
+        if (birdY < 0) birdY = 0;
+        bird.style.top = birdY + "px";
+
+        if (birdY > 440) gameOver();
+      }, 16);
+
+      pipeInterval = setInterval(() => {
+        pipeX -= 4;
+        if (pipeX < -60) {
+          pipeX = 900;
+          pipeHeight = Math.floor(Math.random() * 200) + 50;
+        }
+
+        pipeTop.style.right = (900 - pipeX) + "px";
+        pipeTop.style.height = pipeHeight + "px";
+
+        pipeBottom.style.right = (900 - pipeX) + "px";
+        pipeBottom.style.height = (500 - pipeHeight - pipeGap) + "px";
+
+        const birdRect = bird.getBoundingClientRect();
+        const pipeTopRect = pipeTop.getBoundingClientRect();
+        const pipeBottomRect = pipeBottom.getBoundingClientRect();
+
+        if (
+          (birdRect.right > pipeTopRect.left && birdRect.left < pipeTopRect.right &&
+            birdRect.top < pipeTopRect.bottom) ||
+          (birdRect.right > pipeBottomRect.left && birdRect.left < pipeBottomRect.right &&
+            birdRect.bottom > pipeBottomRect.top)
+        ) {
+          gameOver();
+        }
+      }, 16);
+
+      function gameOver() {
+        clearInterval(birdInterval);
+        clearInterval(pipeInterval);
+        gameRunning = false;
+        alert("Game Over!");
+        playButton.style.display = "block";
+      }
+    }
+  </script>
+</div>
+
+
+
+     
+<div class="carousel-item">
+
+  <h3>MeloDino🌺</h3>
+  <p></p>
+
+  <div id="dino-game" style="
+    width: 900px;
+    height: 500px;
+    border: 2px solid pink;
+    position: relative;
+    overflow: hidden;
+    background: url('images/fundo3.jpeg') no-repeat center;
+    background-size: cover;
+    margin: 0 auto;
+  ">
+    <img id="dino" src="images/meloru.gif" alt="Dino fofo" style="
+      position: absolute;
+      bottom: 0;
+      left: 50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+    " />
+
+    <div id="cactus" style="
+      position: absolute;
+      bottom: 0;
+      left: 900px;
+      width: 50px;
+      height: 40px;
+      background: linear-gradient(to top, #b6f2a1, #d4ffd4);
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+    "></div>
+
+    <button id="play-dino-button" onclick="startDinoGame()" style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: pink;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffb6c1;
+    cursor: pointer;
+
+
+    ">Play Dino Game</button>
+  </div>
+
+  <script>
+    let isJumping = false;
+    let isGameRunning = false;
+    let gameInterval;
+    let keyListenerAttached = false;
+
+    function jump() {
+      if (isJumping) return;
+
+      isJumping = true;
+      const dino = document.getElementById("dino");
+      let position = 0;
+      const jumpHeight = 130;
+
+      const upInterval = setInterval(() => {
+        if (position >= jumpHeight) {
+          clearInterval(upInterval);
+          const downInterval = setInterval(() => {
+            if (position <= 0) {
+              clearInterval(downInterval);
+              isJumping = false;
+            } else {
+              position -= 3;
+              dino.style.bottom = position + "px";
+            }
+          }, 20);
+        } else {
+          position += 3;
+          dino.style.bottom = position + "px";
+        }
+      }, 20);
+    }
+
+    function startDinoGame() {
+      if (isGameRunning) return;
+
+      const dino = document.getElementById("dino");
+      const cactus = document.getElementById("cactus");
+      const playButton = document.getElementById("play-dino-button");
+      const gameContainer = document.getElementById("dino-game");
+
+      playButton.style.display = "none";
+      cactus.style.left = "900px";
+      isGameRunning = true;
+
+      if (!keyListenerAttached) {
+        document.addEventListener("keydown", (e) => {
+          if (e.code === "KeyW" || e.code === "Space") {
+            e.preventDefault();
+            jump();
+          }
+        });
+        keyListenerAttached = true;
+      }
+
+      gameInterval = setInterval(() => {
+        let cactusLeft = parseInt(cactus.style.left);
+        cactusLeft -= 5;
+        cactus.style.left = cactusLeft + "px";
+
+        if (cactusLeft < -60) {
+          cactusLeft = 900;
+          cactus.style.left = cactusLeft + "px";
+        }
+
+        // Colisão usando bounding boxes relativas ao container
+        const dinoBox = dino.getBoundingClientRect();
+        const cactusBox = cactus.getBoundingClientRect();
+        const containerBox = gameContainer.getBoundingClientRect();
+
+        // Corrige para coordenadas relativas ao container
+        const dinoLeft = dinoBox.left - containerBox.left;
+        const dinoRight = dinoBox.right - containerBox.left;
+        const dinoTop = dinoBox.top - containerBox.top;
+        const dinoBottom = dinoBox.bottom - containerBox.top;
+
+        const cactusLeftAbs = cactusBox.left - containerBox.left;
+        const cactusRight = cactusBox.right - containerBox.left;
+        const cactusTop = cactusBox.top - containerBox.top;
+        const cactusBottom = cactusBox.bottom - containerBox.top;
+
+        if (
+          dinoRight > cactusLeftAbs &&
+          dinoLeft < cactusRight &&
+          dinoBottom > cactusTop &&
+          dinoTop < cactusBottom
+        ) {
+          alert("Game Over!");
+          clearInterval(gameInterval);
+          isGameRunning = false;
+          cactus.style.left = "900px";
+          playButton.style.display = "block";
+        }
+      }, 20);
+    }
+  </script>
+</div>
+
+</div>
+
+
+
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
+
+</div>
+
+
+			  </div>
+	</div>
+
+<section id="galeria">
+  
+   
+    <p><br></p>
+<div class="galeria-container">
+   <h2>Galeria de Fotos</h2>
+    <div class="galeria">
+      <img src="images/gal1.jpeg" alt="Foto 1" class="galeria-img">
+      <img src="images/gal2.jpeg" alt="Foto 2" class="galeria-img">
+      <img src="images/gal3.jpeg" alt="Foto 3" class="galeria-img">
+      <img src="images/gal4.jpeg" alt="Foto 4" class="galeria-img">
+      <img src="images/gal5.jpeg" alt="Foto 5" class="galeria-img">
+      <img src="images/gal6.jpeg" alt="Foto 6" class="galeria-img">
+      <img src="images/gal7.jpeg" alt="Foto 7" class="galeria-img">
+      <img src="images/gal8.jpeg" alt="Foto 8" class="galeria-img">
+      <img src="images/gal9.jpeg" alt="Foto 9" class="galeria-img">
+      <img src="images/gal10.jpeg" alt="Foto 10" class="galeria-img">
+      <img src="images/gal11.jpeg" alt="Foto 11" class="galeria-img">
+      <img src="images/gal12.jpeg" alt="Foto 12" class="galeria-img">
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="filmes"></section>
+
+
+<div class="container-filmes">
+  <h2>Filmes</h2>
+<p>
+  <br>
+</p>
+  <div class="video-e-texto">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="filmes/filme1.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
+    <div class="texto-filmes">
+      <p>O Filme da Hello Kitty, "Vila da Floresta", é muuito  fofo, calmo e cheio de charme nostálgico.
+    Cada episódio tem histórias simples e doces, com cenários feitos à mão e aquele jeitinho acolhedor que lembra infância.🍓
+    Vamos ver outras recomendações geniais de filmes para você apreciar?
+
+</p>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+	
+			
+		<div class="row mb-3">
+  <div class="col-lg-4">
+    <div class="card">
+      <img src="images/capa1.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Hello Kitty: Vila da Floresta</h5>
+        <p class="card-text">Hello Kitty: Vila na Floresta é uma série encantadora e tranquila, com animação em stop motion e histórias leves sobre amizade e descobertas. Um aconchego visual e emocional.
+</p>
+        <a href="#" class="btn btn-primary">Assista</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img src="images/capa2.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Hello Kitty: Cinderella</h5>
+        <p class="card-text">Hello Kitty: Cinderella é uma versão fofa e resumida do clássico conto, com charme, simplicidade e a doçura característica da Hello Kitty. Uma adaptação leve e encantadora. 🌸
+</p>
+        <a href="#" class="btn btn-primary">Assista</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img src="images/capa3.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Hello Kitty: no Oyayubi Hime</h5>
+        <p class="card-text">Hello Kitty: no Oyayubi Hime é uma adaptação fofa da história da Polegarzinha, com a Hello Kitty no papel principal. O curta traz uma aventura delicada, com amizade, coragem e um visual encantador.
+</p>
+        <a href="#" class="btn btn-primary">Assista</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="circulos-personagens">
+  <div class="circulo-personagem">
+    <img src="images/simg5.jpeg" alt="Personagem 1">
+     <p class="nome-personagem">Hello Kitty</p>
+  </div>
+  <div class="circulo-personagem">
+    <img src="images/simg2.jpeg" alt="Personagem 2">
+    <p class="nome-personagem">Cinnamoroll</p>
+  </div>
+  <div class="circulo-personagem">
+    <img src="images/simg1.jpeg" alt="Personagem 3">
+    <p class="nome-personagem">Kurumi</p>
+  </div>
+  <div class="circulo-personagem">
+    <img src="images/simg4.jpeg" alt="Personagem 4">
+    <p class="nome-personagem">PomPompurin</p>
+  </div>
+  <div class="circulo-personagem">
+    <img src="images/simg3.jpeg" alt="Personagem 5">
+    <p class="nome-personagem">Badtz-Maru</p>
+  </div>
+  <div class="circulo-personagem">
+    <img src="images/simg6.jpeg" alt="Personagem 6">
+    <p class="nome-personagem">Pochacco</p>
+  </div>
+
+
+<section id="contato"></section>
+<div class="container my-5">
+  <h2 class="text-start">Fale com a gente!</h2>
+  <form>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="seu@email.com">
+    </div>
+
+    <div class="mb-3">
+      <label for="mensagem" class="form-label">Mensagem</label>
+      <textarea class="form-control" id="mensagem" rows="5" placeholder="Escreva sua mensagem..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+
+		
+</div>
+
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+<footer class="rodape">
+  <p>&copy; 2025 BlogSanrios(Letícia Rodrigues). Todas as imagens pertencem à Sanrio Co., Ltd.</p>
+</footer>
